@@ -12,6 +12,7 @@ const server = http.createServer( function(req, res){
         if( error ){
             res.writeHead(404)
             res.write("error ")
+            res.end()
         }else{
             res.end(data)
         }
