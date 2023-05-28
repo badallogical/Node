@@ -1,7 +1,7 @@
 
-var random = require('./test')
+var random = require('./module1.js')
 
-random.res.fun1(10)
-console.log(random.res.value1)
+const factorial = random.factorical;
+var num = 5
+console.log(`Factorial of ${num} is ${factorial(num)}`)
 
-console.log( random.person.name )
