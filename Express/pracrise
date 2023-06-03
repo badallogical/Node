@@ -1,0 +1,9 @@
+// 1: create server using express
+
+// 2: create public folder, add 2 html 2 css File
+
+// 3: routes 
+
+// 4: add ejs file , in views folder.
+
+// 5: display the data of url in ejs file.

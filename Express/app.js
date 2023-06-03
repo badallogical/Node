@@ -3,29 +3,37 @@ const express = require("express")
 // server
 const app = express()
 
+
+
 // path to resource
-var path = "D:/Work/Teaching/Backend/Node/view/"
+var path = 'D:/Work/Backend/Node/Express/public/'
+
+app.use( express.static('public'))
+
+app.set('view engine', 'ejs');
+app.set('views', 'D:/Work/Backend/Node/Express/views');
 
 // routes
 app.get("/", function(req, res){
-    res.sendFile( path + "home.html")
+    res.sendFile( path + "shopping.html")
 })
 
-app.get("/about", function(req, res){
-    res.sendFile(path + "about.html")
+app.get("/about/:name/:info", function(req, res){
+    console.log(req.params.name);
+    res.render("index", { myname : req.params.name, info : req.params.info} )
 })
 
 app.get("/ext/1", function(req,res){
-    res.sendFile( path + "Ext/test.html")
+    res.sendFile( path + "test.html")
 })
 
 app.get("/ext/2", function(req, res){
-    res.sendFile( path + "Ext/shopping.html")
+    res.sendFile( path + "shopping.html")
 })
 
 // server started
 app.listen(3000, function(error){
-    console.log("Server is listening at port" + 3000 )
+    console.log("Server is listening at port " + 3000 )
 })
 
 
