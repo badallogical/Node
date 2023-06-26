@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fetch Example</title>
+  <script>
+    function requestNewPage() {
+      fetch('/ext/1')
+        .then(function(response) {
+          return response.text();
+        })
+        .then(function(data) {
+          // Display the retrieved data on the current page
+          document.body.innerHTML = data;
+        //   window.location.href = data.url;
+        })
+        .catch(function(error) {
+          console.log('Error:', error);
+        });
+    }
+  </script>
+</head>
+<body>
+  <h1>Fetch Example</h1>
+  <button onclick="requestNewPage()">Request New Page</button>
+  <div id="content"></div>
+</body>
+</html>
